@@ -5,9 +5,9 @@ type Props = {
 }
 
 const Child = ({ myProp }: Props) => (
-    <div>
-        { myProp }
-    </div>
-)
+  <div>
+    { myProp }
+  </div>
+);
 
 export default Child;
