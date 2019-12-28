@@ -1,0 +1,50 @@
+{
+    "parser": "babel-eslint", // a wrapper around BABEL parser that makes it compatible with eslint
+    "parserOptions": { //a must-be component when using es6 or later
+        "ecmaVersion": 6, //es6
+        "sourceType": "module", //default is "script", set to "module" if code is in ES modules
+        "ecmaFeatures": { //defines additional features
+            "arrowFunctions": true, // enable arrow functions
+            "experimentalObjectRestSpread": true, //enable object rest spread (experimental feat)
+            "jsx": true //enable jsx
+        }
+    },
+    "settings": { //eslint configuration file cause added some rule - my case is relative import with alias in webpack.config.js
+        "import/resolver": {
+            "webpack": {
+                "config": "webpack.config.js"
+            }
+        }
+    },
+    "env": {  //config environment
+        "es6": true,
+        "browser": true, //browser glbal variables
+        "jest": true //jest global variables
+    },
+    "globals": { //global variable without popping error cause of not importing in the same file
+        "Props": true
+    },
+    "plugins": [ //plugin name - install with [ yarn add -D eslint-plugin-{name} ]
+        "react", // react is a shorten of eslint-plugin-react
+        "babel",
+        "flowtype",
+        "import"
+    ],
+    "extends": [ //use to extend the below rules
+        "eslint:recommended",
+        "plugin:react/recommended" // [plugin:][name of eslint-plugin-react => react][/][configuration name => recommended]
+    ],
+    "rules": {
+        "no-console": 1,
+        "eqeqeq": 2,
+        "quotes": [2, "single"],
+        "space-unary-ops": 0,
+        "spaced-comment": 0,
+        "strict": 2,
+        "template-curly-spacing": 0,
+        "use-isnan": 2,
+        "valid-jsdoc": 0,
+        "valid-typeof": 2,
+        "vars-on-top": 0
+    }
+}
