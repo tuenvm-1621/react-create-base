@@ -33,7 +33,7 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: [".json", ".js"],
+    extensions: ['.json', '.js'],
     alias: {
       rootFolder: path.resolve(__dirname, './src'),
     }
@@ -44,7 +44,7 @@ module.exports = {
     host: 'localhost',
     hot: true,
     port: 3000,
-    open: true,
+    open: 'Google Chrome', //open new tab when starting, if true => default browser
     onListening: server => {
       const port = server.listeningApp.address().port;
       console.log(`THIS APP IS RUNNING IN PORT: ${port}`);
