@@ -1,6 +1,6 @@
 import React from 'react';
-import Child from './Child';
+import Child from 'components/Child';
 
-const App = () => <Child myProp="ESLINT" />;
+const App = () => <Child myProp="JEST" />;
 
 export default App;
