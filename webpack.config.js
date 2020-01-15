@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js', //indicate module to begin building the internal dependency graph (prepare needed modules)
+  entry: ['@babel/polyfill', './src/index.js'], //indicate module to begin building the internal dependency graph (prepare needed modules)
   watch: true, //after initial build, webpack will continue to watch for changes in resolved files
   output: { //files after builds - optimizes browsers when css, js... have no change
     path: path.join(__dirname, '/dist'),

@@ -7,16 +7,36 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.1",
+    "core-js": "2",
+    "fbjs": "^1.0.0",
     "jest-cli": "^24.9.0",
     "jest-dom": "^4.0.0",
+    "lodash": "^4.17.15",
+    "next-redux-saga": "^4.1.2",
+    "next-redux-wrapper": "^4.0.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-global": "^0.1.8",
+    "react-redux": "^7.1.3",
+    "redux": "^4.0.5",
+    "redux-actions": "^2.6.5",
+    "redux-persist": "^6.0.0",
+    "redux-saga": "^1.1.3",
+    "reselect": "^4.0.0",
+    "saga": "^4.0.0-alpha"
   },
   "scripts": {
     "start": "webpack-dev-server --mode development --color",
+    "dev": "next",
     "build": "webpack --mode production",
     "lint": "eslint --ext=js src",
     "test": "jest --verbose"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "circleci local execute"
+    }
   },
   "jest": {
     "roots": [
@@ -45,6 +65,7 @@
   "devDependencies": {
     "@babel/cli": "^7.7.5",
     "@babel/core": "^7.7.5",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-optional-chaining": "^7.7.5",
     "@babel/plugin-transform-arrow-functions": "^7.7.4",
     "@babel/preset-env": "^7.7.6",
@@ -65,10 +86,12 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.17.0",
     "html-webpack-plugin": "4.0.0-alpha.2",
+    "next": "^9.1.7",
     "react-test-renderer": "^16.12.0",
     "style-loader": "^1.0.1",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1"
+    "webpack-dev-server": "^3.10.1",
+    "husky": "^4.2.1"
   }
 }
