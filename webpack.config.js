@@ -3,10 +3,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: ['@babel/polyfill', './src/index.js'], //indicate module to begin building the internal dependency graph (prepare needed modules)
-  watch: true, //after initial build, webpack will continue to watch for changes in resolved files
+  entry: ['@babel/polyfill', './src/client/index.js'], //indicate module to begin building the internal dependency graph (prepare needed modules)
+  // watch: true, //after initial build, webpack will continue to watch for changes in resolved files
   output: { //files after builds - optimizes browsers when css, js... have no change
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, '/build'),
     filename: 'output.js',
     publicPath: '/',
   },
@@ -24,6 +24,10 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'], // no options
       },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
     ],
   },
   plugins: [ // customize webpack build process
@@ -36,7 +40,7 @@ module.exports = {
   resolve: { // options change how modules are resolved.
     extensions: ['.json', '.js'],
     alias: {
-      components: path.resolve(__dirname, './src/components'), //alias the import path '../../components/Alias' => 'components/Alias'
+      components: path.resolve(__dirname, './src/client/components'), //alias the import path '../../components/Alias' => 'components/Alias'
     },
   },
   devServer: {

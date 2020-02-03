@@ -47,7 +47,7 @@ export default class V1 {
     this.client.interceptors.request.use(config => {
       if (!this._isFormDataRequest(config)) {
         const keyMapper = key => customeSnakeCase(key);
-        config.data = deepMapKeys(config.data, keyMapper)
+        config.data = deepMapKeys(config.data, keyMapper);
       }
       return config;
     });
@@ -63,7 +63,7 @@ export default class V1 {
       return res;
     }, error => {
       if (!error.response || error.response.status === 500) {
-        throw Object.assign({ errror_code: 700, messsage: 'Something went wrong!' });
+        throw ({ errror_code: 700, messsage: 'Something went wrong!' });
       }
       throw error.response.data;
     });

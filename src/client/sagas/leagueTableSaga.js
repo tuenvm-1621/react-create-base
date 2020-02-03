@@ -8,7 +8,7 @@ function* getLeagueTableSaga(action) {
     const response = yield call([LeagueTableApi, LeagueTableApi.getLeagueTable], action.payload);
     yield put(saveLeagueTable(response.data));
   } catch (e) {
-    // do nothing
+    // dothing
   }
 }
 

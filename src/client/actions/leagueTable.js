@@ -6,6 +6,6 @@ export const {
   getLeagueTable,
   saveLeagueTable,
 } = createActions({
-  [ActionTypes.GET_INFO_TABLE]: payload => payload,
-  [ActionTypes.SAVE_INFO_TABLE]: payload => payload,
+  [ActionTypes.GET_LEAGUE_TABLE]: leagueId => leagueId,
+  [ActionTypes.SAVE_LEAGUE_TABLE]: payload => payload,
 });

@@ -4,17 +4,20 @@
   "private": true,
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
+    "@babel/register": "^7.8.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.1",
     "core-js": "2",
+    "express": "^4.17.1",
     "fbjs": "^1.0.0",
+    "ignore-styles": "^5.0.1",
     "jest-cli": "^24.9.0",
     "jest-dom": "^4.0.0",
+    "jsdom": "^16.1.0",
     "lodash": "^4.17.15",
-    "next-redux-saga": "^4.1.2",
-    "next-redux-wrapper": "^4.0.1",
+    "path": "^0.12.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-global": "^0.1.8",
@@ -28,10 +31,12 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development --color",
-    "dev": "next",
     "build": "webpack --mode production",
     "lint": "eslint --ext=js src",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "server:build-server": "NODE_ENV=development webpack --config webpack.server.js --mode=development -w",
+    "server:start": "nodemon ./server-build/index.js",
+    "server": "npm-run-all --parallel build server:*"
   },
   "husky": {
     "hooks": {
@@ -68,9 +73,9 @@
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-optional-chaining": "^7.7.5",
     "@babel/plugin-transform-arrow-functions": "^7.7.4",
-    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-env": "^7.8.4",
     "@babel/preset-flow": "^7.7.4",
-    "@babel/preset-react": "^7.6.3",
+    "@babel/preset-react": "^7.8.3",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "8.0.4",
@@ -85,13 +90,16 @@
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.17.0",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "4.0.0-alpha.2",
-    "next": "^9.1.7",
+    "husky": "^4.2.1",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
     "react-test-renderer": "^16.12.0",
     "style-loader": "^1.0.1",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1",
-    "husky": "^4.2.1"
+    "webpack-node-externals": "^1.7.2"
   }
 }
