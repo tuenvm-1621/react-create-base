@@ -1,13 +1,11 @@
+// @flow
 import React from 'react';
 
-type Props = {
-    myProp: String,
-}
+import PremierLeague from './premierLeague';
 
-const Child = ({ myProp }: Props) => (
+export default () => (
   <div>
-    { myProp }
+    <h2>English Premier League Table</h2>
+    <PremierLeague league='Premier League' leagueId={524} />
   </div>
 );
-
-export default Child;
